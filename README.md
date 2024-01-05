@@ -17,11 +17,10 @@ git clone https://github.com/driesheylen123/OLINK-Target-96-cohort-bridging.git
 4. The repository includes the required reference files but in orde to have your own cohort data bridged towards this reference pool you need to insert (each batch) of the cohort data in raw npx format at the /data/. level.
    
 
-```
 5. Once your data is in the right place the last thing you need to do before you can run the script is insert the correct filename in the bridging_run.R file where "./data/yourdata_NPX.xlsx"
 
-```
 
-```
+
+
 6. Now running the bridging_run.R file in any R environemnt will apply the cohort bridging procedure on you data to make it comparable.
-```
+
