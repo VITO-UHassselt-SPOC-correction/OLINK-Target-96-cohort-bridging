@@ -128,7 +128,7 @@ read_NPX <- function(filename){
     LOD <- dat %>% filter(stringr::str_detect(Name, "LOD"))
   }
   
-  # Add the new meta data to ´meta_dat´
+  # Add the new meta data to Â´meta_datÂ´
   meta_dat <- rbind(meta_dat,missfreq)
   if (!is_npx_data) {
     meta_dat <- rbind(meta_dat,LLOQ,ULOQ,assay_warning,Plate_LQL)
