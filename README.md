@@ -22,5 +22,5 @@ git clone https://github.com/driesheylen123/OLINK-Target-96-cohort-bridging.git
 
 
 
-6. Now running the bridging_run.R file in any R environemnt will apply the cohort bridging procedure on you data to make it comparable.
+6. Now running the bridging_run.R file in any R environemnt will apply the cohort bridging procedure on you data to make it comparable. In the ".data/output" directory the complete bridged dataset will be saved as well as a file called 'intervals.csv' that computes an upper and lower interval bound for each protein based on your data, indicating the variation present in your cohort for that specific protein.
 
