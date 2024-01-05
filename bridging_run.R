@@ -1,7 +1,7 @@
 # or this if the data already in 'data' folder inside the repository
 source("bridging_fun1.R")
-filename1 <- "./data/20200195_Joosten_FAPIC_NPX.xlsx"
-filename2 <- "./data/20200703_Joosten_NPX.xlsx"
+filename1 <- "./data/yourdata_NPX.xlsx"
+filename2 <- "./data/yourdata_NPX.xlsx"
 #Additional batches can be included completely analogue to filename 1 and filename 2
 
 #load the reference pool that includes all proteins that OLINK measures with target 96.
