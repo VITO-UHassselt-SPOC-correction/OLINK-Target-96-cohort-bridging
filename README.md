@@ -1,8 +1,6 @@
 # OLINK-Target-96-cohort-bridging procedure
 
 
-## Running the app online
-shiny app to be deployed based on IRI shiny app from murih
 ## Running the app locally
 
 1. Open the terminal/command promt on your pc.
