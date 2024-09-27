@@ -128,7 +128,7 @@ read_NPX <- function(filename){
     LOD <- dat %>% filter(stringr::str_detect(Name, "LOD"))
   }
   
-  # Add the new meta data to ´meta_dat´
+  # Add the new meta data to Â´meta_datÂ´
   meta_dat <- rbind(meta_dat,missfreq)
   if (!is_npx_data) {
     meta_dat <- rbind(meta_dat,LLOQ,ULOQ,assay_warning,Plate_LQL)
@@ -567,14 +567,20 @@ run_fun <- function(filename1, filename2, filename3){
   # code draft adjustmnent for automating the batch correction process 
   #if it doesn't work the way it is now here subsetting DF[1] from the rest and renaming df [2] to end as Df[i] also allows iterating over all the non batch1 things. 
   
-  
-  batch_corrected_data <- olink_normalization(df1 = data.frame(df[1]),
-                                              df2 = data.frame(df[2]),
-                                              overlapping_samples_df1 = overlap_samples,
-                                              df1_project_nr = 'P1',
-                                              df2_project_nr = 'P2',
-                                              reference_project = 'P1')
-  df[[2]] <- batch_corrected_data[1:12]
+  if (length(overlap_samples) > 0) {
+    # Perform batch correction only if there are overlapping samples
+    batch_corrected_data <- olink_normalization(df1 = data.frame(df[[1]]),
+                                                df2 = data.frame(df[[2]]),
+                                                overlapping_samples_df1 = overlap_samples,
+                                                df1_project_nr = 'P1',
+                                                df2_project_nr = 'P2',
+                                                reference_project = 'P1')
+    
+    # Update df with batch corrected data
+    df[[2]] <- batch_corrected_data[1:12]
+  } else {
+    message("No overlapping samples found. Skipping batch correction.")
+  }
   
   
   
@@ -724,17 +730,8 @@ run_fun <- function(filename1, filename2, filename3){
   
   df.wide <- dcast(df1, SampleID ~ UniProt, 
                    value.var = "NPX", fun.aggregate = mean)
-  
-  # get descriptive statistics
-  f.list<-function(x){
-    c(summary(x), sd=sd(x, na.rm = T),
-      norm.pval = shapiro.test(x)$p.value,
-      norm.stat = shapiro.test(x)$statistic,
-      stat.desc(x))
-  }
-  desc.stat <- as.data.frame(apply(df.wide[,-1],2,f.list))
-  save(desc.stat, file = "descriptive_statistics.RData")
-  
+
+
   int <- matrix(0, nrow = ncol(df.wide)-1, ncol=2)
   normal_intervals <- cbind.data.frame(colnames(df.wide[,-1]), int)
   colnames(normal_intervals) <- c('uniprot', 'lower', 'upper')
