@@ -541,7 +541,7 @@ boot_NP <- function(B, data, p1=0.025, p2=0.975, bootfun){
 #now the reference batch could be give as this to the normalization function and we could let the function iterate over the non_reference_batches? 
 #######################################################################################################                                                                   
 
-run_fun <- function(filename1, filename2, filename3){
+run_fun <- function(filename1, filename2){
   #### SECOND STEP: perform batch correction across different batches in your data cohort, this in order to ...
   # To define batches Batch 1 should be the biggest batch, or the first batch sampled if there is no difference in size 
   my_files<-list.files("./data", pattern = "\\.xlsx$", full.names=TRUE)
@@ -599,15 +599,14 @@ run_fun <- function(filename1, filename2, filename3){
     df[[i]] <- control_aligned_data	
   }
   
-  df[[length(df)+1]] <- as.data.frame(read_excel(filename3))
-  
+
   
   
   #df3 <- rbind(avg_control(df1), df1)
   #df4 <- rbind(avg_control(df2), df2)
   #' # Find overlaping samples, olink controls --> overlap controls are the same controls?
   #' what random means?     
-  overlap_samples <- intersect((data.frame(df[2]) %>% filter(grepl("control", SampleID, ignore.case = T)))$SampleID,
+  overlap_samples <- intersect((data.frame(df[2]) %>% filter(grepl("AverageControl", SampleID, ignore.case = T)))$SampleID,
                                (data.frame(df[[length(df)]]) %>% filter(grepl("control", SampleID, ignore.case= T)))$SampleID)
   
   # Function loaded on line  316 will also perform this bridging , but with different type of ...
@@ -618,8 +617,8 @@ run_fun <- function(filename1, filename2, filename3){
   
  
 
-    output <- olink_normalization(df1 = data.frame(df[[length(df)]]),
-                                df2 = data.frame(df[2]),
+    output <- olink_normalization(df1 = data.frame(df[1]),
+                                df2 = data.frame(df[[length(df)]]),
                                 overlapping_samples_df1 = overlap_samples,
                                 df1_project_nr = 'P1',
                                 df2_project_nr = 'P2',
