@@ -1,4 +1,4 @@
-#A VITO/DSI workflow to create normal thresholds for OLINK proteomics data
+#A VITO/DSI workflow to apply a Synthetic Plasma pOol Cohort (SPOC) correction for OLINK proteomics data
 #required packages
 install.packages("readxl")
 library(dplyr)
@@ -529,17 +529,6 @@ boot_NP <- function(B, data, p1=0.025, p2=0.975, bootfun){
   return(ri)
 }
 
-############################# @ Murih first read_NPX automisation could be solved like this I believe:
-#put all files in one folder
-#my_files <- list.files(./data)
-#files <- list(my_files)
-# datasetslongformat <-  lapply(files, function(x) read_NPX(x))
-# datsetslongformat[] contains now all files (batches) after applying the read_NPX function on them. subset so that all except the first one remains and then you could iterate over the other batches for the olink _normalization step?    
-#nbatches  <- length(datasetslongformat)
-#non_reference_batches <- datasetslongformat[2:nbatches]
-#reference_batches <- datasetslongformat[1]
-#now the reference batch could be give as this to the normalization function and we could let the function iterate over the non_reference_batches? 
-#######################################################################################################                                                                   
 
 run_fun <- function(filename1, filename2){
   #### SECOND STEP: perform batch correction across different batches in your data cohort, this in order to ...
