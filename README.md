@@ -1,7 +1,7 @@
 # OLINK-Target-96-SPOC-Correction-procedure
 
 
-## Running the app locally
+## Running the correction locally
 
 1. Open the terminal/command prompt on your pc.
 2. change the directory to the folder you want to store the application in.
