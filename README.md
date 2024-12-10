@@ -1,4 +1,4 @@
-# OLINK-Target-96-cohort-bridging procedure
+# OLINK-Target-96-SPOC-Correction-procedure
 
 
 ## Running the app locally
