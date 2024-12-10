@@ -537,7 +537,7 @@ run_fun <- function(filename1, filename2){
   df<-list()
   for (i in 1:length(my_files)) {
     df.read<-read_NPX(my_files[i])
-    df[[i]]<-df.read
+    df[[i]]<-df.read[, 1:min(12, ncol(df.read))]
   }
   #now each data can be called by df[[1]], df[[2]], ..., so the lines underneeth can be removed
   
