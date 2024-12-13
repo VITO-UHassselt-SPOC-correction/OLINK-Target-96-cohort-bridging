@@ -17,3 +17,6 @@ git clone https://github.com/driesheylen123/OLINK-Target-96-cohort-bridging.git
    
 5. Now running the bridging_run.R file (with the briding_fun.R file in the same directory) in any R environment will apply the cohort bridging procedure on your data to make it comparable. In the ".data/output" directory the complete bridged dataset will be saved together with a file called 'intervals.csv' that computes an upper and lower interval bound for each protein based on your SPOC corrected cohort data, indicating the variation present in your cohort for each specific protein.
 
+6. OPTONAL: Code designed to isolate external control sample data from your cohort or that of your collaborators, enabling the application of the SPOC correction method in compliance with federated data principles.
+
+
