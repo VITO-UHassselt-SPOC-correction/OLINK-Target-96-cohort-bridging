@@ -287,7 +287,7 @@ read_NPX <- function(filename){
 
 #Running this script on a folder with NPX_manager files will subtract the external controls from your data.
 my_files<-list.files("path with al the different batches of your cohort in raw npx format in should be put here in xlsx format", pattern = "\\.xlsx$", full.names=TRUE)
-my_files<-list.files("Y:/Unit_HEALTH/RD_SPEC/Platform Systems Biology/3 PhD & PostDoc/PhD_Xomics/02_Data analyses/IAM_sepsis bridge/Computational bridging", pattern = "\\.xlsx$", full.names=TRUE)
+#my_files<-list.files("Y:/Unit_HEALTH/RD_SPEC/Platform Systems Biology/3 PhD & PostDoc/PhD_Xomics/02_Data analyses/IAM_sepsis bridge/Computational bridging", pattern = "\\.xlsx$", full.names=TRUE)
 
 df<-list()
 for (i in 1:length(my_files)) {
