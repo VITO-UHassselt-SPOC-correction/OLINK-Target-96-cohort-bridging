@@ -20,3 +20,6 @@ git clone https://github.com/driesheylen123/OLINK-Target-96-cohort-bridging.git
 6. OPTONAL: Federated_control_selectioin.R contains the Code designed to isolate external control sample data from your cohort or that of your collaborators, enabling the application of the SPOC correction method in compliance with federated data principles. The path to any complete raw NPX data file for which you wish to isolate the external sample controls should be placed in line 289 of the script. 
 
 
+## Reference
+
+The briding_fun script contains Olink Analyze scripts that were modified and tailored to fit the SPOC correction purpose. The original OLINK scripts are from Olink Analyze: Nevola K, Sandin M, Guess J, Forsberg S, Cambronero C, Pucholt P, Zhang B, Sheikhi M, Diamanti K, Kar A, Conze L, Chin K, Topouza D (2025). Olink Analyze: Facilitate Analysis of Proteomic Data from Olink. R package version 4.1.0.
