@@ -22,4 +22,4 @@ git clone https://github.com/driesheylen123/OLINK-Target-96-cohort-bridging.git
 
 ## Reference
 
-The briding_fun script contains Olink Analyze scripts that were modified and tailored to fit the SPOC correction purpose. The original OLINK scripts are from Olink Analyze: Nevola K, Sandin M, Guess J, Forsberg S, Cambronero C, Pucholt P, Zhang B, Sheikhi M, Diamanti K, Kar A, Conze L, Chin K, Topouza D (2025). Olink Analyze: Facilitate Analysis of Proteomic Data from Olink. R package version 4.1.0.
+The briding_fun.R script contains Olink Analyze scripts that have been combined, modified and customized for the purpose of the SPOC correction procedure. The original OLINK scripts are from Olink Analyze: Nevola K, Sandin M, Guess J, Forsberg S, Cambronero C, Pucholt P, Zhang B, Sheikhi M, Diamanti K, Kar A, Conze L, Chin K, Topouza D (2025). Olink Analyze: Facilitate Analysis of Proteomic Data from Olink. R package version 4.1.0.
